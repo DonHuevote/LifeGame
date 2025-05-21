@@ -1,0 +1,136 @@
+[gd_scene load_steps=23 format=3 uid="uid://cyg0wvuncdewe"]
+
+[ext_resource type="Script" uid="uid://dqtp80gg80vg6" path="res://scripts/movimiento3DPersonaje.gd" id="1_dataj"]
+[ext_resource type="Texture2D" uid="uid://oahyv253d0pe" path="res://Sprites/papel.png" id="1_lnwm1"]
+[ext_resource type="Texture2D" uid="uid://3cb1klr63ic3" path="res://Sprites/Kid.png" id="2_nxkkg"]
+[ext_resource type="Texture2D" uid="uid://deeiwwnnpf80h" path="res://Sprites/hojaB.png" id="3_nxkkg"]
+[ext_resource type="Script" uid="uid://bdwe145tm5vdu" path="res://Escenas/hoja_1.gd" id="4_p3djj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dataj"]
+
+[sub_resource type="Sky" id="Sky_nxkkg"]
+sky_material = SubResource("ProceduralSkyMaterial_dataj")
+
+[sub_resource type="Environment" id="Environment_dataj"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_nxkkg")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tpp3i"]
+size = Vector3(0.252336, 0.716751, 0.0368652)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sd8uy"]
+size = Vector2(0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1pjoq"]
+transparency = 1
+albedo_texture = ExtResource("2_nxkkg")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uxgii"]
+size = Vector2(2.19, 4)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_p3djj"]
+render_priority = -2
+albedo_texture = ExtResource("1_lnwm1")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_p3djj"]
+data = PackedVector3Array(1.095, 0, 2, -1.095, 0, 2, 1.095, 0, -2, -1.095, 0, 2, -1.095, 0, -2, 1.095, 0, -2)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_i808m"]
+size = Vector2(4, 2.19)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sd8uy"]
+transparency = 1
+albedo_texture = ExtResource("3_nxkkg")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p3djj"]
+flip_faces = true
+size = Vector2(4, 2.19)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i808m"]
+render_priority = -1
+transparency = 1
+albedo_texture = ExtResource("3_nxkkg")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nxkkg"]
+size = Vector3(19.3562, 5.05331, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lnwm1"]
+size = Vector3(9.90069, 5.9917, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p3djj"]
+size = Vector3(4.02708, 5.41693, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i808m"]
+size = Vector3(5.19836, 1, 1)
+
+[node name="Etapa3-Lectura" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dataj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0359637, 0.999353, 0, -0.999353, -0.0359637, 0.0609388, 2.70615, 1.33013)
+shadow_enabled = true
+shadow_bias = 5.757
+shadow_normal_bias = 8.162
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.890475, 0.455032, 0, -0.455032, 0.890475, 0.0701008, 1.42564, 3.26523)
+
+[node name="Personaje" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.584945, 1.10689)
+script = ExtResource("1_dataj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Personaje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0506959, -0.0778732, 0)
+shape = SubResource("BoxShape3D_tpp3i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Personaje"]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0, 0)
+mesh = SubResource("PlaneMesh_sd8uy")
+surface_material_override/0 = SubResource("StandardMaterial3D_1pjoq")
+
+[node name="suelo" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.13788)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="suelo"]
+transform = Transform3D(1.83191, 0, 0, 0, 1.5168, 0, 0, 0, 0.568393, 0, 0, 0.20853)
+mesh = SubResource("PlaneMesh_uxgii")
+surface_material_override/0 = SubResource("ORMMaterial3D_p3djj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suelo"]
+transform = Transform3D(1.83191, 0, 0, 0, 1.5168, 0, 0, 0, 0.568393, 0, 0, 0.20853)
+shape = SubResource("ConcavePolygonShape3D_p3djj")
+
+[node name="hoja1" type="Area3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+script = ExtResource("4_p3djj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="hoja1"]
+transform = Transform3D(4.99973, 0.0523587, -2.18545e-07, -2.18557e-07, 9.55343e-15, -5, -0.0523587, 4.99973, 2.28868e-09, 0, 5.46168, 0)
+mesh = SubResource("PlaneMesh_i808m")
+surface_material_override/0 = SubResource("StandardMaterial3D_sd8uy")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="hoja1"]
+transform = Transform3D(5.01026, 0, 0, 0, -4.37114e-08, -5.00742, 0, 1, -2.18881e-07, 0, 5.462, 0)
+mesh = SubResource("PlaneMesh_p3djj")
+surface_material_override/0 = SubResource("StandardMaterial3D_i808m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hoja1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.251342, 2.68847, -0.35115)
+shape = SubResource("BoxShape3D_nxkkg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="hoja1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.98172, 7.87251, -0.35115)
+shape = SubResource("BoxShape3D_lnwm1")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="hoja1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.51227, 7.58512, -0.35115)
+shape = SubResource("BoxShape3D_p3djj")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="hoja1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.09918, 11.019, -0.35115)
+shape = SubResource("BoxShape3D_i808m")
+
+[connection signal="body_entered" from="hoja1" to="Personaje" method="_on_area_3d_body_entered"]

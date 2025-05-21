@@ -1,0 +1,236 @@
+[gd_scene load_steps=35 format=3 uid="uid://cyg0wvuncdewe"]
+
+[ext_resource type="Script" uid="uid://dqtp80gg80vg6" path="res://scripts/movimiento3DPersonaje.gd" id="1_dataj"]
+[ext_resource type="Texture2D" uid="uid://oahyv253d0pe" path="res://Sprites/papel.png" id="1_lnwm1"]
+[ext_resource type="Script" uid="uid://b2wt5b4qejlou" path="res://Escenas/etapa_3_lectura.gd" id="1_sd8uy"]
+[ext_resource type="Texture2D" uid="uid://3cb1klr63ic3" path="res://Sprites/Kid.png" id="2_nxkkg"]
+[ext_resource type="Texture2D" uid="uid://deeiwwnnpf80h" path="res://Sprites/Hoja_B.png" id="3_nxkkg"]
+[ext_resource type="Script" uid="uid://bdwe145tm5vdu" path="res://Escenas/hoja_1.gd" id="4_p3djj"]
+[ext_resource type="Texture2D" uid="uid://chewe7o5pqk4x" path="res://Sprites/Hoja_a.png" id="6_i808m"]
+[ext_resource type="Texture2D" uid="uid://qrcfhxnak482" path="res://Sprites/Hoja_c.png" id="8_1pjoq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dataj"]
+
+[sub_resource type="Sky" id="Sky_nxkkg"]
+sky_material = SubResource("ProceduralSkyMaterial_dataj")
+
+[sub_resource type="Environment" id="Environment_dataj"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_nxkkg")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tpp3i"]
+size = Vector3(0.252336, 0.716751, 0.0368652)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sd8uy"]
+size = Vector2(0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1pjoq"]
+render_priority = 1
+transparency = 1
+albedo_texture = ExtResource("2_nxkkg")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uxgii"]
+size = Vector2(2.19, 4)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_p3djj"]
+render_priority = -2
+albedo_texture = ExtResource("1_lnwm1")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_p3djj"]
+data = PackedVector3Array(1.095, 0, 2, -1.095, 0, 2, 1.095, 0, -2, -1.095, 0, 2, -1.095, 0, -2, 1.095, 0, -2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nxkkg"]
+size = Vector3(19.3562, 5.05331, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lnwm1"]
+size = Vector3(9.90069, 5.9917, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p3djj"]
+size = Vector3(4.02708, 5.41693, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i808m"]
+size = Vector3(5.19836, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_i808m"]
+size = Vector2(4, 2.19)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sd8uy"]
+transparency = 1
+blend_mode = 4
+cull_mode = 2
+depth_draw_mode = 1
+shading_mode = 2
+albedo_texture = ExtResource("3_nxkkg")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_743ym"]
+size = Vector2(4, 2.19)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vaqti"]
+transparency = 1
+blend_mode = 4
+cull_mode = 2
+depth_draw_mode = 1
+albedo_texture = ExtResource("6_i808m")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sd8uy"]
+size = Vector3(12.2936, 1, 11.2847)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1pjoq"]
+size = Vector3(8.15631, 1, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_743ym"]
+size = Vector3(2.70593, 1, 6.16113)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vaqti"]
+size = Vector3(6.97949, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_743ym"]
+transparency = 1
+blend_mode = 4
+cull_mode = 2
+depth_draw_mode = 1
+albedo_texture = ExtResource("8_1pjoq")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v0i1j"]
+size = Vector3(6.50232, 1, 0.405273)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_khoer"]
+size = Vector3(12.5, 1, 11)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_045ap"]
+size = Vector3(8.401, 0.8, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4r6f4"]
+size = Vector3(1.91553, 1, 7.8772)
+
+[node name="Etapa3-Lectura" type="Node3D"]
+script = ExtResource("1_sd8uy")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dataj")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.890475, 0.455032, 0, -0.455032, 0.890475, 0.0701008, 1.42564, 3.26523)
+
+[node name="Personaje" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.584945, 1.10689)
+script = ExtResource("1_dataj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Personaje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0506959, -0.0778732, 0)
+shape = SubResource("BoxShape3D_tpp3i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Personaje"]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0, 0)
+mesh = SubResource("PlaneMesh_sd8uy")
+surface_material_override/0 = SubResource("StandardMaterial3D_1pjoq")
+
+[node name="suelo" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 1.138)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="suelo"]
+transform = Transform3D(1.83191, 0, 0, 0, 1.5168, 0, 0, 0, 0.568393, 0, 0, 0.20853)
+mesh = SubResource("PlaneMesh_uxgii")
+surface_material_override/0 = SubResource("ORMMaterial3D_p3djj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suelo"]
+transform = Transform3D(1.83191, 0, 0, 0, 1.5168, 0, 0, 0, 0.568393, 0, 0, 0.20853)
+shape = SubResource("ConcavePolygonShape3D_p3djj")
+
+[node name="hoja1" type="Area3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, -0.0347297, 0.196962, 0, -0.196962, -0.0347297, 0, 0, 0.2)
+script = ExtResource("4_p3djj")
+rotation_remaining = 100.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hoja1"]
+transform = Transform3D(1, 0, 0, 0, -1.49012e-08, -1, 0, 1, -1.49012e-08, -0.251342, 0.35115, 2.68847)
+shape = SubResource("BoxShape3D_nxkkg")
+debug_color = Color(0.313726, 0.494118, 1, 0.52549)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="hoja1"]
+transform = Transform3D(1, 0, 0, 0, -1.49012e-08, -1, 0, 1, -1.49012e-08, -4.98172, 0.35115, 7.87251)
+shape = SubResource("BoxShape3D_lnwm1")
+debug_color = Color(0, 0.6, 0.701961, 0.588235)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="hoja1"]
+transform = Transform3D(1, 0, 0, 0, -1.49012e-08, -1, 0, 1, -1.49012e-08, 7.51227, 0.35115, 7.58512)
+shape = SubResource("BoxShape3D_p3djj")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="hoja1"]
+transform = Transform3D(1, 0, 0, 0, -1.49012e-08, -1, 0, 1, -1.49012e-08, 2.09918, 0.35115, 11.019)
+shape = SubResource("BoxShape3D_i808m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="hoja1"]
+transform = Transform3D(5, 4.37114e-07, 4.37114e-07, 4.37114e-07, -5, 0, 4.37114e-07, 3.82137e-14, -5, 0, 0.038, 5.259)
+mesh = SubResource("PlaneMesh_i808m")
+surface_material_override/0 = SubResource("StandardMaterial3D_sd8uy")
+
+[node name="hoja2" type="Area3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, -0.0381619, 0.196326, 0, -0.196326, -0.0381619, 0, 0, 0.2)
+script = ExtResource("4_p3djj")
+rotation_remaining = 101.5
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="hoja2"]
+transform = Transform3D(5, -4.37114e-07, -4.37114e-07, -4.44676e-07, -4.99924, -0.087262, -4.29419e-07, 0.087262, -4.99924, 7.42765e-14, 0.0944176, 5.40918)
+mesh = SubResource("PlaneMesh_743ym")
+skeleton = NodePath("../../hoja3")
+surface_material_override/0 = SubResource("StandardMaterial3D_vaqti")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hoja2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.83527, 0, 5.14237)
+shape = SubResource("BoxShape3D_sd8uy")
+debug_color = Color(0, 0.6, 0.701961, 1)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="hoja2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9934, 0, 2.5)
+shape = SubResource("BoxShape3D_1pjoq")
+debug_color = Color(0, 0.6, 0.701961, 1)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="hoja2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3101, 0, 7.89059)
+shape = SubResource("BoxShape3D_743ym")
+debug_color = Color(0, 0.6, 0.701961, 1)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="hoja2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.35289, 0, 10.4094)
+shape = SubResource("BoxShape3D_vaqti")
+debug_color = Color(0, 0.6, 0.701961, 1)
+
+[node name="hoja3" type="Area3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, -0.0415825, 0.19563, 0, -0.19563, -0.0415825, 0, 0, 0.2)
+script = ExtResource("4_p3djj")
+rotation_remaining = 101.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="hoja3"]
+transform = Transform3D(4.99999, -4.37114e-07, -4.37114e-07, -4.29418e-07, -4.99924, 0.0872622, -4.44676e-07, -0.0872622, -4.99924, 0, -0.0944175, 5.40917)
+mesh = SubResource("PlaneMesh_743ym")
+skeleton = NodePath("../../hoja2")
+surface_material_override/0 = SubResource("StandardMaterial3D_743ym")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="hoja3"]
+transform = Transform3D(0.999994, 0, 0, 0, 1, 0, 0, 0, 1, -5.61016, 0.375937, -0.297363)
+shape = SubResource("BoxShape3D_v0i1j")
+debug_color = Color(0, 0.6, 0.701961, 0.701961)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hoja3"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 2.98023e-08, 0, -2.98023e-08, 0.999999, 3.8236, 0.0998282, 5.43899)
+shape = SubResource("BoxShape3D_khoer")
+debug_color = Color(0, 0.6, 0.701961, 0.960784)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="hoja3"]
+transform = Transform3D(0.999989, 0, 0, 0, 0.999999, 2.98023e-08, 0, -2.98023e-08, 0.999999, -5.52601, -0.00825071, 7.65632)
+shape = SubResource("BoxShape3D_045ap")
+debug_color = Color(0, 0.6, 0.701961, 1)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="hoja3"]
+transform = Transform3D(0.99999, 0, 0, 0, 0.999999, 2.98023e-08, 0, -2.98023e-08, 0.999999, -8.83286, 0.257304, 3.18764)
+shape = SubResource("BoxShape3D_4r6f4")
+debug_color = Color(0, 0.6, 0.701961, 1)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.948611, 0.316444, 0, -0.316444, 0.948611, 0.545425, 1.02312, 5.11849)
+
+[connection signal="body_entered" from="hoja1" to="Personaje" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="hoja2" to="Personaje" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="hoja3" to="Personaje" method="_on_area_3d_body_entered"]

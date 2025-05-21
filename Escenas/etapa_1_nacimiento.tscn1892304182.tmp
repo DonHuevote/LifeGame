@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvl875881j2dr"]
+
+[ext_resource type="Texture2D" uid="uid://bste7njcq4kl" path="res://Sprites/bebeTesteo.png" id="1_oscgj"]
+[ext_resource type="Script" uid="uid://bhkjq660wh5fo" path="res://Escenas/Movimiento2DFlotarPersonaje.gd" id="1_vfics"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfics"]
+size = Vector2(32, 25)
+
+[node name="Etapa1Nacimiento" type="Node2D"]
+
+[node name="Bebe" type="CharacterBody2D" parent="."]
+position = Vector2(79, 72)
+scale = Vector2(5, 5)
+script = ExtResource("1_vfics")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bebe"]
+texture = ExtResource("1_oscgj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bebe"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_vfics")

@@ -1,0 +1,120 @@
+[gd_scene load_steps=12 format=3 uid="uid://rk73o0j4b544"]
+
+[ext_resource type="Texture2D" uid="uid://bcvwmb6ambd51" path="res://Sprites/room_back.png" id="1_kixru"]
+[ext_resource type="Texture2D" uid="uid://de47fls6ngte2" path="res://Sprites/Kid_walk.png" id="2_22ifc"]
+[ext_resource type="Texture2D" uid="uid://bb25no6dek5ed" path="res://Sprites/testfoto1.png" id="2_kixru"]
+[ext_resource type="Texture2D" uid="uid://dinks58cwlo1w" path="res://Sprites/Kid_fall (3).png" id="2_n6hs8"]
+[ext_resource type="Script" uid="uid://d0f855pnkt3pu" path="res://Escenas/metrono.gd" id="3_22ifc"]
+[ext_resource type="Texture2D" uid="uid://bhsptphs6pg6t" path="res://Sprites/testfoto2.png" id="4_n6hs8"]
+[ext_resource type="FontFile" uid="uid://brmoan08g5u2m" path="res://Fuente/DK Cool Crayon.ttf" id="7_n6hs8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k58o7"]
+atlas = ExtResource("2_22ifc")
+region = Rect2(0, 0, 540, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6hs8"]
+atlas = ExtResource("2_22ifc")
+region = Rect2(540, 0, 540, 1920)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_407h7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n6hs8")
+}],
+"loop": true,
+"name": &"Fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k58o7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6hs8")
+}],
+"loop": false,
+"name": &"Walk",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k58o7"]
+size = Vector2(7, 5.33334)
+
+[node name="Etapa2Caminar" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -9.0
+offset_top = -8.0
+offset_right = 1167.0
+offset_bottom = 654.0
+texture = ExtResource("1_kixru")
+expand_mode = 1
+
+[node name="Jugador" type="CharacterBody2D" parent="."]
+position = Vector2(79, 530)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Jugador"]
+position = Vector2(6, -155)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_407h7")
+animation = &"Walk"
+
+[node name="MetronomoStatico" type="Area2D" parent="."]
+position = Vector2(118, 117)
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="MetronomoStatico"]
+texture = ExtResource("2_kixru")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MetronomoStatico"]
+position = Vector2(-1, 29.6667)
+polygon = PackedVector2Array(0, 0, 6, -60, -6, -60)
+
+[node name="MetronomoMovil" type="CharacterBody2D" parent="."]
+position = Vector2(114, 213)
+scale = Vector2(3, 3)
+script = ExtResource("3_22ifc")
+
+[node name="Sprite2D" type="Sprite2D" parent="MetronomoMovil"]
+position = Vector2(2, -31.3333)
+texture = ExtResource("4_n6hs8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MetronomoMovil"]
+position = Vector2(-0.333337, -54.6667)
+shape = SubResource("RectangleShape2D_k58o7")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="tiempo" type="Label" parent="."]
+offset_left = 556.0
+offset_top = 53.0
+offset_right = 596.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_n6hs8")
+theme_override_font_sizes/font_size = 30
+
+[node name="aviso" type="Label" parent="."]
+offset_left = 170.0
+offset_top = 260.0
+offset_right = 725.0
+offset_bottom = 397.0
+scale = Vector2(1.37381, 1.16734)
+theme_override_fonts/font = ExtResource("7_n6hs8")
+theme_override_font_sizes/font_size = 75
+horizontal_alignment = 1
+
+[node name="instrucciones" type="Label" parent="."]
+offset_left = 165.0
+offset_top = 43.0
+offset_right = 574.0
+offset_bottom = 167.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_n6hs8")
+theme_override_font_sizes/font_size = 50
+text = "Press  \"E\""
+horizontal_alignment = 1
+
+[connection signal="animation_finished" from="Jugador/AnimatedSprite2D" to="MetronomoMovil" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="MetronomoStatico" to="MetronomoMovil" method="_on_metronomo_statico_body_entered"]
+[connection signal="body_exited" from="MetronomoStatico" to="MetronomoMovil" method="_on_metronomo_statico_body_exited"]

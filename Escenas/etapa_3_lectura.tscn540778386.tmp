@@ -1,0 +1,152 @@
+[gd_scene load_steps=23 format=3 uid="uid://cyg0wvuncdewe"]
+
+[ext_resource type="Script" uid="uid://dqtp80gg80vg6" path="res://scripts/movimiento3DPersonaje.gd" id="1_dataj"]
+[ext_resource type="Texture2D" uid="uid://oahyv253d0pe" path="res://Sprites/papel.png" id="1_lnwm1"]
+[ext_resource type="Texture2D" uid="uid://3cb1klr63ic3" path="res://Sprites/Kid.png" id="2_nxkkg"]
+[ext_resource type="Texture2D" uid="uid://deeiwwnnpf80h" path="res://Sprites/hojaB.png" id="3_nxkkg"]
+[ext_resource type="Script" uid="uid://bdwe145tm5vdu" path="res://Escenas/hoja_1.gd" id="4_p3djj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dataj"]
+
+[sub_resource type="Sky" id="Sky_nxkkg"]
+sky_material = SubResource("ProceduralSkyMaterial_dataj")
+
+[sub_resource type="Environment" id="Environment_dataj"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_nxkkg")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tpp3i"]
+size = Vector3(0.4263, 0.849365, 0.0368652)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnwm1"]
+atlas = ExtResource("2_nxkkg")
+region = Rect2(0, 0, 547, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3djj"]
+atlas = ExtResource("2_nxkkg")
+region = Rect2(1641, 0, 547, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i808m"]
+atlas = ExtResource("2_nxkkg")
+region = Rect2(2188, 0, 547, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd8uy"]
+atlas = ExtResource("2_nxkkg")
+region = Rect2(1094, 0, 547, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pjoq"]
+atlas = ExtResource("2_nxkkg")
+region = Rect2(547, 0, 547, 1200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_743ym"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnwm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3djj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i808m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnwm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd8uy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pjoq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uxgii"]
+size = Vector2(2.19, 4)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_p3djj"]
+albedo_texture = ExtResource("1_lnwm1")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lnwm1"]
+data = PackedVector3Array(1.095, 0, 2, -1.095, 0, 2, 1.095, 0, -2, -1.095, 0, 2, -1.095, 0, -2, 1.095, 0, -2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nxkkg"]
+size = Vector3(18.6626, 4.99109, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lnwm1"]
+size = Vector3(9.05139, 5.9917, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p3djj"]
+size = Vector3(4.02708, 5.41693, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i808m"]
+size = Vector3(5.19836, 1, 1)
+
+[node name="Etapa3-Lectura" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dataj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0359637, 0.999353, 0, -0.999353, -0.0359637, 0.0609388, 2.70615, 1.33013)
+shadow_enabled = true
+shadow_bias = 5.757
+shadow_normal_bias = 8.162
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.683465, 0.729984, 0, -0.729984, 0.683465, 0.0701008, 2.1366, 3.26523)
+
+[node name="Personaje" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.584945, 1.10689)
+script = ExtResource("1_dataj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Personaje"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0113525, 0)
+shape = SubResource("BoxShape3D_tpp3i")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Personaje"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+sprite_frames = SubResource("SpriteFrames_743ym")
+
+[node name="suelo" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.13788)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="suelo"]
+transform = Transform3D(1.63942, 0, 0, 0, 1, 0, 0, 0, 0.568393, 0, 0, 0)
+mesh = SubResource("PlaneMesh_uxgii")
+surface_material_override/0 = SubResource("ORMMaterial3D_p3djj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suelo"]
+transform = Transform3D(1.63942, 0, 0, 0, 1, 0, 0, 0, 0.568393, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_lnwm1")
+
+[node name="hoja1" type="Area3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+script = ExtResource("4_p3djj")
+rotation_speed = null
+
+[node name="Sprite3D" type="Sprite3D" parent="hoja1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.37666, 0)
+texture = ExtResource("3_nxkkg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hoja1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0954592, 2.65736, -0.35115)
+shape = SubResource("BoxShape3D_nxkkg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="hoja1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.55707, 7.87251, -0.35115)
+shape = SubResource("BoxShape3D_lnwm1")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="hoja1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.51227, 7.58512, -0.35115)
+shape = SubResource("BoxShape3D_p3djj")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="hoja1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.09918, 11.019, -0.35115)
+shape = SubResource("BoxShape3D_i808m")
+
+[connection signal="body_entered" from="hoja1" to="Personaje" method="_on_area_3d_body_entered"]

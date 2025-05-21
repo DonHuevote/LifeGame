@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlgp47j2rfgia"]
+
+[ext_resource type="Texture2D" uid="uid://bfswn016ftyl4" path="res://Sprites/park_back.png" id="1_pk56l"]
+[ext_resource type="Script" uid="uid://v12dehwqhgmh" path="res://Escenas/MovimientoPersonajeEtapa4.gd" id="2_lbpx2"]
+[ext_resource type="Texture2D" uid="uid://b4sjcn8l4aj0a" path="res://Sprites/Kid_pickHearth.png" id="2_njm2l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njm2l"]
+size = Vector2(63, 28.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbpx2"]
+
+[node name="Etapa4PrimerAmor" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -54.0
+offset_top = -80.0
+offset_right = 1239.0
+offset_bottom = 642.0
+texture = ExtResource("1_pk56l")
+expand_mode = 2
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(137, 505)
+script = ExtResource("2_lbpx2")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_njm2l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-14.5, 59.75)
+shape = SubResource("RectangleShape2D_njm2l")
+debug_color = Color(0, 0.6, 0.701961, 0.545098)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(574, 307)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(52.36, 32.4)
+shape = SubResource("RectangleShape2D_lbpx2")
+debug_color = Color(0, 0.6, 0.701961, 0.521569)
