@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Life"
-run/main_scene="res://Escenas/etapa_3_lectura.tscn"
+run/main_scene="uid://dvl875881j2dr"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globalsed="*res://scripts/global.gd"
 
 [debug]
 

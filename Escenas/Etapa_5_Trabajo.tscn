@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmt7eyw6vf4q3"]
+
+[ext_resource type="Script" uid="uid://b60u2ilvalia3" path="res://scripts/etapa_5_trabajo.gd" id="1_euq1v"]
+[ext_resource type="Texture2D" uid="uid://5tm2sj4qta14" path="res://Sprites/laPala_back.png" id="1_h4xe2"]
+[ext_resource type="FontFile" uid="uid://brmoan08g5u2m" path="res://Fuente/DK Cool Crayon.ttf" id="2_xxu4s"]
+
+[node name="Etapa5Trabajo" type="Node2D"]
+script = ExtResource("1_euq1v")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -20.0
+offset_top = -9.0
+offset_right = 20.0
+offset_bottom = 31.0
+scale = Vector2(29.48, 16.44)
+texture = ExtResource("1_h4xe2")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 429.0
+offset_top = 137.0
+offset_right = 765.0
+offset_bottom = 463.0
+theme_override_colors/default_color = Color(0.560955, 0.560955, 0.560955, 1)
+theme_override_fonts/normal_font = ExtResource("2_xxu4s")
+theme_override_font_sizes/normal_font_size = 30
+text = "los mamiferos son 
+animales muy lindos y grandes"
+
+[node name="Fecha" type="Label" parent="."]
+offset_left = 743.0
+offset_top = 15.0
+offset_right = 1030.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xxu4s")
+theme_override_font_sizes/font_size = 25
+text = "FECHA: LUNES"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 17.0
+offset_right = 574.0
+offset_bottom = 99.0
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_fonts/font = ExtResource("2_xxu4s")
+theme_override_font_sizes/font_size = 30
+text = "Entrega el informe antes del
+ siguiente  lunes!!"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

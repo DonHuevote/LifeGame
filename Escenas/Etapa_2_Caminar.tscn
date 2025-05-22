@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://de47fls6ngte2" path="res://Sprites/Kid_walk.png" id="2_22ifc"]
 [ext_resource type="Texture2D" uid="uid://bb25no6dek5ed" path="res://Sprites/testfoto1.png" id="2_kixru"]
 [ext_resource type="Texture2D" uid="uid://dinks58cwlo1w" path="res://Sprites/Kid_fall (3).png" id="2_n6hs8"]
-[ext_resource type="Script" uid="uid://d0f855pnkt3pu" path="res://Escenas/metrono.gd" id="3_22ifc"]
+[ext_resource type="Script" uid="uid://d0f855pnkt3pu" path="res://scripts/metrono.gd" id="3_22ifc"]
 [ext_resource type="Texture2D" uid="uid://bhsptphs6pg6t" path="res://Sprites/testfoto2.png" id="4_n6hs8"]
 [ext_resource type="FontFile" uid="uid://brmoan08g5u2m" path="res://Fuente/DK Cool Crayon.ttf" id="7_n6hs8"]
 

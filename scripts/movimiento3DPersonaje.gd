@@ -1,13 +1,9 @@
 extends CharacterBody3D
 
-
-
 const SPEED := 1.0
 const JUMP_VELOCITY := 2
 const GRAVITY := 9.8
-
-
-
+var vidas = 3
 
 func _physics_process(delta):
 	var direction = Vector3.ZERO
@@ -44,5 +40,8 @@ func _physics_process(delta):
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Personaje":
-		print("perdiste")
+		vidas -= 1
+		$"../Label".text = "VIDAS: "+str(vidas)
+		if vidas < 0:
+			get_tree().change_scene_to_file("res://Escenas/PantallaDePerder.tscn")
 	pass # Replace with function body.

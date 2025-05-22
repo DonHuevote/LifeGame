@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0tllsqscr3fl"]
+
+[ext_resource type="Script" uid="uid://bypi6dqoelu53" path="res://Prefabs/corazon.gd" id="1_8th83"]
+[ext_resource type="Texture2D" uid="uid://7eyhl40o7eel" path="res://Sprites/Heath.png" id="2_x4lty"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oqgrd"]
+radius = 187.856
+
+[node name="Area2D" type="Area2D"]
+scale = Vector2(0.108802, 0.108802)
+script = ExtResource("1_8th83")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_x4lty")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oqgrd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
