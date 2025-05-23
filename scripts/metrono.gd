@@ -57,7 +57,8 @@ func _process(delta):
 		if tiempo <= 0:
 			get_tree().change_scene_to_file("res://Escenas/PantallaDePerder.tscn")
 		if $"../Jugador".global_position.x >1150:
-			get_tree().change_scene_to_file("res://Escenas/etapa_3_lectura.tscn")
+			Globalsed.nivel = 3
+			get_tree().change_scene_to_file("res://Escenas/LevelIntro.tscn")
 	else:
 		tiempo -= 1 * delta
 		var tiempoRedondeado : int = round(tiempo)

@@ -38,6 +38,7 @@ func _on_player_damaged(lives_left: int) -> void:
 	lives_label.text = "Vidas: %d" % lives_left
 
 func on_level_complete():
+	get_tree().change_scene_to_file("res://Escenas/win_scene.tscn")
 	print("¡Ganaste!")
 
 func start_countdown():

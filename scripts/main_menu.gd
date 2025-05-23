@@ -30,7 +30,7 @@ func _ready():
 	$Panel/options.pressed.connect(_on_options_pressed)
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://Escenas/etapa_1_nacimiento.tscn")
+	get_tree().change_scene_to_file("res://Escenas/LevelIntro.tscn")
 
 func _on_quit_pressed():
 	get_tree().quit()

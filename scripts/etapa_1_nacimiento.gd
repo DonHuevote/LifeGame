@@ -55,6 +55,6 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://Escenas/PantallaDePerder.tscn")
 
 func _on_meta_body_entered(body: Node2D) -> void:
-	
-	get_tree().change_scene_to_file("res://Escenas/Etapa_2_Caminar.tscn")
+	Globalsed.nivel = 2
+	get_tree().change_scene_to_file("res://Escenas/LevelIntro.tscn")
 	pass # Replace with function body.

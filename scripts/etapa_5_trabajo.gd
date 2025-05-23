@@ -31,7 +31,8 @@ func _input(event):
 					indice_actual += 1
 
 				if indice_actual == palabra.length():
-					get_tree().change_scene_to_file("res://Escenas/etapa6_CielitoLindo.tscn")
+					Globalsed.nivel = 6
+					get_tree().change_scene_to_file("res://Escenas/LevelIntro.tscn")
 					print("¡Texto completo!")
 
 

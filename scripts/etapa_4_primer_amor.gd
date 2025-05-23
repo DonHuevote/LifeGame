@@ -5,7 +5,7 @@ extends Node2D
 
 
 var generados := 0
-var progreso 
+var progreso = 0
 var cantidad = 37
 func _ready():
 	progreso = get_node("/root/Etapa4PrimerAmor/BarraDeAmor/Progreso")
@@ -16,7 +16,8 @@ func _ready():
 func _process(delta: float) -> void:
 	if progreso.size.y >= 367:
 		print("ganaste")
-		get_tree().change_scene_to_file("res://Escenas/Etapa_5_Trabajo.tscn")
+		Globalsed.nivel = 5
+		get_tree().change_scene_to_file("res://Escenas/LevelIntro.tscn")
 	if generados >= cantidad:
 		get_tree().change_scene_to_file("res://Escenas/PantallaDePerder.tscn")
 		print("Perdiste")

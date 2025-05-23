@@ -14,4 +14,5 @@ func _process(delta: float) -> void:
 			break  # Solo activar una hoja a la vez
 
 	if get_node("hoja9").end:
-		get_tree().change_scene_to_file("res://Escenas/etapa_4_PrimerAmor.tscn")
+		Globalsed.nivel = 4
+		get_tree().change_scene_to_file("res://Escenas/LevelIntro.tscn")
