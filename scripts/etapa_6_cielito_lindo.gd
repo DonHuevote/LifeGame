@@ -8,7 +8,7 @@ extends Node2D
 var countdown := 3
 var game_started := false
 
-const LEVEL_DURATION := 60.0  
+const LEVEL_DURATION := 45 
 var level_timer := 0.0
 var level_complete := false
 

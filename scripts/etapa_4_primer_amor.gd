@@ -41,7 +41,8 @@ func _on_timer_timeout() -> void:
 	)
 	instancia.position = pos
 	add_child(instancia)
-	
+	generados += 1
+	print(str(generados))
 	pass # Replace with function body.
 
 
@@ -58,4 +59,5 @@ func aumentarProgreso() -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.name == "corazon":
 		generados += 1
+		print(str(generados))
 	pass # Replace with function body.
