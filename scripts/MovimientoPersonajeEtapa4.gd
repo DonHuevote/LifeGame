@@ -20,7 +20,6 @@ func _on_area_de_caida_body_exited(body: Node2D) -> void:
 		direccion = direccion * -1
 		sePuedeMover = false
 		
-
 	pass # Replace with function body.
 
 
