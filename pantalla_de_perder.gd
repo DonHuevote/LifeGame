@@ -3,7 +3,7 @@ extends Node2D
 func _ready() -> void:
 	if  Globalsed.nivel == 1 :
 		$TextureRect.texture = load("res://Sprites/Etapa1_Perder.png")
-		$Descripcion.text = "La ciuguegnia no llego a destino, no naces!!"
+		$Descripcion.text = "La ciugueña no llego a destino, no naces!!"
 	if  Globalsed.nivel == 2 :
 		$TextureRect.texture =  load("res://Sprites/Etapa2_Perder.png")
 		$Descripcion.text = "De tanto caerte te resignas, y vives toda tu vida gateando"
@@ -17,7 +17,7 @@ func _ready() -> void:
 		$TextureRect.texture =  load("res://Sprites/Etapa5_Perder.png")
 		$Descripcion.text = "Te despiden, no tienes dinero, vives en la inmundicia"
 	if  Globalsed.nivel == 6 :
-		$Descripcion.text = "Te vas al infierno, y seras torturado de por vida"
+		$Descripcion.text = "Te vas al infierno, y seras torturado de por vida laburando"
 		$TextureRect.texture =  load("res://Sprites/Etapa6_Perder.png")
 
 

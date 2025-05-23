@@ -60,7 +60,7 @@ offset_top = -298.0
 offset_right = 205.0
 offset_bottom = -271.0
 theme_override_fonts/font = ExtResource("5_oq547")
-max_value = 30.0
+max_value = 60.0
 
 [node name="LivesLabel" type="Label" parent="."]
 z_index = 100
