@@ -47,17 +47,17 @@ func _on_blink_timeout() -> void:
 		is_invincible = false
 
 func die() -> void:
-	print("quedo")
+	get_tree().change_scene_to_file("res://Escenas/PantallaDePerder.tscn")
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("move_right"):
 		direction.x += 1
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("move_left"):
 		direction.x -= 1
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("move_forward"):
 		direction.y -= 1
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("move_back"):
 		direction.y += 1
 
 	velocity = direction.normalized() * speed

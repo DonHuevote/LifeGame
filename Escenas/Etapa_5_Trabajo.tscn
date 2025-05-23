@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmt7eyw6vf4q3"]
+[gd_scene load_steps=5 format=3 uid="uid://dmt7eyw6vf4q3"]
 
 [ext_resource type="Script" uid="uid://b60u2ilvalia3" path="res://scripts/etapa_5_trabajo.gd" id="1_euq1v"]
 [ext_resource type="Texture2D" uid="uid://5tm2sj4qta14" path="res://Sprites/laPala_back.png" id="1_h4xe2"]
 [ext_resource type="FontFile" uid="uid://brmoan08g5u2m" path="res://Fuente/DK Cool Crayon.ttf" id="2_xxu4s"]
+[ext_resource type="AudioStream" uid="uid://cb213vn45w2ga" path="res://Music/laburo.mp3" id="4_6bj1m"]
 
 [node name="Etapa5Trabajo" type="Node2D"]
 script = ExtResource("1_euq1v")
@@ -51,5 +52,10 @@ text = "Entrega el informe antes del
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6bj1m")
+autoplay = true
+bus = &"Music"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

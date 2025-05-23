@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvl875881j2dr"]
+[gd_scene load_steps=11 format=3 uid="uid://dvl875881j2dr"]
 
 [ext_resource type="Script" uid="uid://cke26iscneo1i" path="res://scripts/etapa_1_nacimiento.gd" id="1_gyyey"]
 [ext_resource type="Script" uid="uid://bhkjq660wh5fo" path="res://scripts/Movimiento2DFlotarPersonaje.gd" id="1_vfics"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bxfewkq81af6q" path="res://Sprites/sky_back.png" id="3_3d42b"]
 [ext_resource type="FontFile" uid="uid://brmoan08g5u2m" path="res://Fuente/DK Cool Crayon.ttf" id="3_bosgb"]
 [ext_resource type="Texture2D" uid="uid://bpqg6dajanecv" path="res://Sprites/cigueña.png" id="4_btkyh"]
+[ext_resource type="AudioStream" uid="uid://baa88hrbhp48w" path="res://Music/nacer.mp3" id="7_a320o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3d42b"]
 radius = 11.6155
@@ -75,5 +76,10 @@ position = Vector2(28357, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Meta"]
 position = Vector2(-122, 312)
 shape = SubResource("RectangleShape2D_bosgb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_a320o")
+autoplay = true
+bus = &"Music"
 
 [connection signal="body_entered" from="Meta" to="." method="_on_meta_body_entered"]

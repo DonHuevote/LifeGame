@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://rk73o0j4b544"]
+[gd_scene load_steps=13 format=3 uid="uid://rk73o0j4b544"]
 
 [ext_resource type="Texture2D" uid="uid://bcvwmb6ambd51" path="res://Sprites/room_back.png" id="1_kixru"]
 [ext_resource type="Texture2D" uid="uid://de47fls6ngte2" path="res://Sprites/Kid_walk.png" id="2_22ifc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://d0f855pnkt3pu" path="res://scripts/metrono.gd" id="3_22ifc"]
 [ext_resource type="Texture2D" uid="uid://bhsptphs6pg6t" path="res://Sprites/testfoto2.png" id="4_n6hs8"]
 [ext_resource type="FontFile" uid="uid://brmoan08g5u2m" path="res://Fuente/DK Cool Crayon.ttf" id="7_n6hs8"]
+[ext_resource type="AudioStream" uid="uid://c8t32q0f13nmy" path="res://Music/caminar.mp3" id="8_k58o7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k58o7"]
 atlas = ExtResource("2_22ifc")
@@ -114,6 +115,11 @@ theme_override_fonts/font = ExtResource("7_n6hs8")
 theme_override_font_sizes/font_size = 50
 text = "Press  \"E\""
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_k58o7")
+autoplay = true
+bus = &"Music"
 
 [connection signal="animation_finished" from="Jugador/AnimatedSprite2D" to="MetronomoMovil" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="MetronomoStatico" to="MetronomoMovil" method="_on_metronomo_statico_body_entered"]

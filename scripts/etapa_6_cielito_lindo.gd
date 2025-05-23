@@ -13,6 +13,7 @@ var level_timer := 0.0
 var level_complete := false
 
 func _ready() -> void:
+	Globalsed.nivel = 6 
 	$CountdownLabel.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	$CountdownLabel.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	countdown_label.text = ""

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcwlv6c0hepla"]
+[gd_scene load_steps=4 format=3 uid="uid://bcwlv6c0hepla"]
 
 [ext_resource type="Script" uid="uid://67427j3a767v" path="res://pantalla_de_perder.gd" id="1_va0qo"]
 [ext_resource type="FontFile" uid="uid://brmoan08g5u2m" path="res://Fuente/DK Cool Crayon.ttf" id="2_lhkiu"]
+[ext_resource type="AudioStream" uid="uid://dpr27p5vpfad" path="res://Music/perder.mp3" id="3_8kwht"]
 
 [node name="PantallaDePerder" type="Node2D"]
 script = ExtResource("1_va0qo")
@@ -42,5 +43,10 @@ scale = Vector2(0.878505, 0.9586)
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Vollver a intentar"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_8kwht")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

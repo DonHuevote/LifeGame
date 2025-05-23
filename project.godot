@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Life"
-run/main_scene="uid://dvl875881j2dr"
+run/main_scene="uid://cfk6iqbw14kyr"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

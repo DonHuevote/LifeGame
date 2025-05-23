@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cyg0wvuncdewe"]
+[gd_scene load_steps=53 format=3 uid="uid://cyg0wvuncdewe"]
 
 [ext_resource type="Script" uid="uid://dqtp80gg80vg6" path="res://scripts/movimiento3DPersonaje.gd" id="1_dataj"]
 [ext_resource type="Texture2D" uid="uid://oahyv253d0pe" path="res://Sprites/papel.png" id="1_lnwm1"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://qrcfhxnak482" path="res://Sprites/Hoja_c.png" id="8_1pjoq"]
 [ext_resource type="Texture2D" uid="uid://bsemtujhwab3i" path="res://Sprites/Hoja_d.png" id="9_743ym"]
 [ext_resource type="FontFile" uid="uid://brmoan08g5u2m" path="res://Fuente/DK Cool Crayon.ttf" id="13_4r6f4"]
+[ext_resource type="AudioStream" uid="uid://b10vc2d0cjw7l" path="res://Music/leer.mp3" id="14_v0i1j"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_khoer"]
 panorama = ExtResource("2_vaqti")
@@ -503,6 +504,11 @@ transform = Transform3D(1, 8.74228e-08, 8.74228e-08, 8.74228e-08, -1, 0, 8.74228
 mesh = SubResource("PlaneMesh_743ym")
 skeleton = NodePath("../../hoja3")
 surface_material_override/0 = SubResource("StandardMaterial3D_vaqti")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_v0i1j")
+autoplay = true
+bus = &"Music"
 
 [connection signal="body_entered" from="hoja1" to="Personaje" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="hoja2" to="Personaje" method="_on_area_3d_body_entered"]

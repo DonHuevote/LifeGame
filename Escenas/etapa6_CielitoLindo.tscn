@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bfv41gmthlsov"]
+[gd_scene load_steps=9 format=3 uid="uid://bfv41gmthlsov"]
 
 [ext_resource type="Script" uid="uid://nwdbrve13noh" path="res://scripts/etapa_6_cielito_lindo.gd" id="1_lu85x"]
 [ext_resource type="Texture2D" uid="uid://c8lg21wxlvskl" path="res://Sprites/havenn_back.png" id="1_yhuqx"]
 [ext_resource type="PackedScene" uid="uid://co172ptt6q1t0" path="res://Escenas/PlayerAnciano.tscn" id="2_so3rx"]
 [ext_resource type="PackedScene" uid="uid://cposrbkcscxxw" path="res://Escenas/SinSpawner.tscn" id="3_oq547"]
 [ext_resource type="FontFile" uid="uid://brmoan08g5u2m" path="res://Fuente/DK Cool Crayon.ttf" id="5_oq547"]
+[ext_resource type="AudioStream" uid="uid://c8i088buug1t7" path="res://Music/viejo.mp3" id="6_bpqyn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_so3rx"]
 size = Vector2(1255.5, 20)
@@ -83,3 +84,9 @@ text = "test"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-569, 0)
+stream = ExtResource("6_bpqyn")
+autoplay = true
+bus = &"Music"
