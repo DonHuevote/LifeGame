@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cposrbkcscxxw"]
+
+[ext_resource type="Script" uid="uid://c00nmq31m21ww" path="res://scripts/sin_spawner.gd" id="1_7ajsf"]
+[ext_resource type="PackedScene" uid="uid://cmguq24otf3ct" path="res://Escenas/Sin.tscn" id="2_fgd7j"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_7ajsf")
+sin_scene = ExtResource("2_fgd7j")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.316
+autostart = true

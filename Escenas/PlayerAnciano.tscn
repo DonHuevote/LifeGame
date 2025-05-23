@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://co172ptt6q1t0"]
+
+[ext_resource type="Script" uid="uid://dg6nqb2biqo47" path="res://scripts/player_anciano.gd" id="1_issrl"]
+[ext_resource type="Texture2D" uid="uid://fc668l1hnsr8" path="res://Sprites/anciano.png" id="1_wokjo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7jumg"]
+radius = 37.0
+height = 148.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_issrl"]
+radius = 34.0
+height = 183.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_issrl")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_7jumg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 5)
+scale = Vector2(0.231944, 0.231944)
+texture = ExtResource("1_wokjo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("CapsuleShape2D_issrl")
+
+[node name="BlinkTimer" type="Timer" parent="."]
+
+[node name="InvincibilityTimer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
