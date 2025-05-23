@@ -3,49 +3,51 @@
 [ext_resource type="FontFile" uid="uid://brmoan08g5u2m" path="res://Fuente/DK Cool Crayon.ttf" id="1_gttq0"]
 [ext_resource type="Script" uid="uid://cpsh85slvjt3q" path="res://scripts/options_menu.gd" id="1_tjnsk"]
 
-[node name="OptionsMenu" type="Control"]
+[node name="OptionsPanel" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_tjnsk")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel2" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1110.0
-offset_bottom = 607.0
+offset_left = 112.0
+offset_top = 72.0
+offset_right = 954.0
+offset_bottom = 528.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Label" type="Label" parent="Panel2"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -547.0
-offset_top = 25.0
-offset_right = -339.0
-offset_bottom = 98.0
+offset_left = -417.0
+offset_top = 27.0
+offset_right = -209.0
+offset_bottom = 100.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_gttq0")
 theme_override_font_sizes/font_size = 65
 text = "MUSIC"
 
-[node name="HSlider" type="HSlider" parent="Panel"]
+[node name="HSlider" type="HSlider" parent="Panel2"]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 111.0
-offset_right = 535.0
-offset_bottom = 127.0
+offset_left = 73.0
+offset_top = 125.0
+offset_right = 570.0
+offset_bottom = 141.0
 min_value = -30.0
 max_value = 0.0
 step = 0.1
 
-[node name="Button3" type="Button" parent="Panel"]
+[node name="back" type="Button" parent="Panel2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
