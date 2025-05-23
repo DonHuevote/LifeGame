@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bfv41gmthlsov"]
 
-[ext_resource type="Script" path="res://scripts/etapa_6_cielito_lindo.gd" id="1_lu85x"]
+[ext_resource type="Script" uid="uid://nwdbrve13noh" path="res://scripts/etapa_6_cielito_lindo.gd" id="1_lu85x"]
 [ext_resource type="Texture2D" uid="uid://c8lg21wxlvskl" path="res://Sprites/havenn_back.png" id="1_yhuqx"]
 [ext_resource type="PackedScene" uid="uid://co172ptt6q1t0" path="res://Escenas/PlayerAnciano.tscn" id="2_so3rx"]
 [ext_resource type="PackedScene" uid="uid://cposrbkcscxxw" path="res://Escenas/SinSpawner.tscn" id="3_oq547"]
@@ -71,3 +71,15 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_oq547")
 theme_override_font_sizes/font_size = 20
 text = "test"
+
+[node name="CountdownLabel" type="Label" parent="."]
+offset_left = -569.0
+offset_right = 568.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_oq547")
+theme_override_font_sizes/font_size = 64
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

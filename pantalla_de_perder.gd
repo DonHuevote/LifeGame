@@ -34,5 +34,5 @@ func _on_button_pressed() -> void:
 	if  Globalsed.nivel == 5 :
 		get_tree().change_scene_to_file("res://Escenas/Etapa_5_Trabajo.tscn")
 	if  Globalsed.nivel == 6 :
-		get_tree().change_scene_to_file("res://Escenas/Etapa_6_Trabajo.tscn")
+		get_tree().change_scene_to_file("res://Escenas/etapa6_CielitoLindo.tscn")
 	pass # Replace with function body.

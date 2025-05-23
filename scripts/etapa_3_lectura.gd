@@ -1,7 +1,7 @@
 extends Node3D
 
 func  _ready() -> void:
-	Globalsed.nivel = 4
+	Globalsed.nivel = 3
 	$hoja1.rotating = true
 	
 func _process(delta: float) -> void:

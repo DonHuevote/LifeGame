@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://dqtp80gg80vg6" path="res://scripts/movimiento3DPersonaje.gd" id="1_dataj"]
 [ext_resource type="Texture2D" uid="uid://oahyv253d0pe" path="res://Sprites/papel.png" id="1_lnwm1"]
 [ext_resource type="Script" uid="uid://b2wt5b4qejlou" path="res://scripts/etapa_3_lectura.gd" id="1_sd8uy"]
-[ext_resource type="Texture2D" uid="uid://3cb1klr63ic3" path="res://Sprites/Kid.png" id="2_nxkkg"]
 [ext_resource type="Texture2D" uid="uid://ch01asnc3vu1w" path="res://Sprites/aprenderALeer_back.png" id="2_vaqti"]
 [ext_resource type="Texture2D" uid="uid://deeiwwnnpf80h" path="res://Sprites/Hoja_B.png" id="3_nxkkg"]
 [ext_resource type="Script" uid="uid://bdwe145tm5vdu" path="res://scripts/hoja_1.gd" id="4_p3djj"]
+[ext_resource type="Texture2D" uid="uid://qks7c2cvpmnh" path="res://Sprites/Kid_fly.png" id="5_4r6f4"]
 [ext_resource type="Texture2D" uid="uid://chewe7o5pqk4x" path="res://Sprites/Hoja_a.png" id="6_i808m"]
 [ext_resource type="Texture2D" uid="uid://dqt7p8pq6nqwx" path="res://Sprites/libroParteDeAbajo.png" id="6_khoer"]
 [ext_resource type="Texture2D" uid="uid://b0eq4x1s728ar" path="res://Sprites/EscritorioTexture.png" id="7_045ap"]
@@ -37,7 +37,7 @@ size = Vector2(0.5, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1pjoq"]
 render_priority = 1
 transparency = 1
-albedo_texture = ExtResource("2_nxkkg")
+albedo_texture = ExtResource("5_4r6f4")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_uxgii"]
 size = Vector2(2.19, 4)

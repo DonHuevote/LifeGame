@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://biftgbvy2ns2k"]
+
+[ext_resource type="FontFile" uid="uid://brmoan08g5u2m" path="res://Fuente/DK Cool Crayon.ttf" id="1_gttq0"]
+[ext_resource type="Script" uid="uid://cpsh85slvjt3q" path="res://scripts/options_menu.gd" id="1_tjnsk"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_tjnsk")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1110.0
+offset_bottom = 607.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -547.0
+offset_top = 25.0
+offset_right = -339.0
+offset_bottom = 98.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_gttq0")
+theme_override_font_sizes/font_size = 65
+text = "MUSIC"
+
+[node name="HSlider" type="HSlider" parent="Panel"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 111.0
+offset_right = 535.0
+offset_bottom = 127.0
+min_value = -30.0
+max_value = 0.0
+step = 0.1
+
+[node name="Button3" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = 125.5
+offset_right = 50.0
+offset_bottom = 178.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_gttq0")
+theme_override_font_sizes/font_size = 40
+text = "RETURN"

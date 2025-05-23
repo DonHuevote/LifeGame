@@ -14,7 +14,7 @@ func _ready():
 
 
 func _process(delta: float) -> void:
-	if progreso.size.x == 367:
+	if progreso.size.x >= 367:
 		print("ganaste")
 		get_tree().change_scene_to_file("res://Escenas/Etapa_5_Trabajo.tscn")
 	if generados >= cantidad:

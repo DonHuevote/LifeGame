@@ -31,7 +31,7 @@ func _input(event):
 					indice_actual += 1
 
 				if indice_actual == palabra.length():
-					#cambiar escena
+					get_tree().change_scene_to_file("res://Escenas/etapa6_CielitoLindo.tscn")
 					print("¡Texto completo!")
 
 
@@ -63,9 +63,7 @@ func _on_timer_timeout() -> void:
 		$Fecha.text = "FECHA: SABADO"
 	if diasPasados == 7:
 		$Fecha.text = "FECHA: DOMINGO"
-	if diasPasados == 7:
+		await get_tree().create_timer(1.0).timeout
 		$Fecha.text = "PERDISTE"
 		get_tree().change_scene_to_file("res://Escenas/PantallaDePerder.tscn")
-	$Timer.start()
 		
-	pass # Replace with function body.
